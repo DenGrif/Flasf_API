@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Сайт с прогнозом погоды в любой точке мира</h1>
+
+<!-- создаём форму для запроса -->
+<form method="post">
+    <input type="text" name="city" placeholder="Введите город" required>
+    <button type="submit">Узнать погоду</button>
+   </form>
+
+   <!-- получение информации -->
+   <div class="result">
+   <!-- условия для вывода информации -->
+       {% if weather %}
+           <!-- подставляем значение, которое передается в переменной weather и ключи,
+           который берём из результата с сайта OpenWeatherMap -->
+           <h3>Погода в {{ weather['name'] }}</h3>
+           <p>Температура: {{ weather['main']['temp'] }}°C</p>
+           <p>Погода: {{ weather['weather'][0]['description'] }}</p>
+       {% endif %}
+</div>
+</body>
+</html>
