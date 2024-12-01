@@ -26,6 +26,17 @@
        {% endif %}
    </div>
 
+    </div>
+    <div class="result text-center">
+   {% if quote %}
+       <h2>Случайная цитата:</h2>
+       <blockquote class="blockquote">
+           <p class="mb-2">"{{ quote['content'] }}"</p>
+           <footer class="blockquote-footer">{{ quote['author'] }}</footer>
+       </blockquote>
+   {% endif %}
+    </div>
+
 
    <div class="result text-center">
 
@@ -40,7 +51,7 @@
        {% endif %}
 
 
-   </div>
+
 </div>
 
 
